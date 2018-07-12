@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathAlgorithm", "MathAlgorithm\MathAlgorithm.csproj", "{A84FEA0A-4635-46E9-B948-9E2AE2F3B2A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathRunner", "MathRunner\MathRunner.csproj", "{2FFB5A97-D742-4D5C-9F80-C7BBAE22391F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A84FEA0A-4635-46E9-B948-9E2AE2F3B2A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A84FEA0A-4635-46E9-B948-9E2AE2F3B2A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A84FEA0A-4635-46E9-B948-9E2AE2F3B2A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A84FEA0A-4635-46E9-B948-9E2AE2F3B2A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FFB5A97-D742-4D5C-9F80-C7BBAE22391F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FFB5A97-D742-4D5C-9F80-C7BBAE22391F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FFB5A97-D742-4D5C-9F80-C7BBAE22391F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FFB5A97-D742-4D5C-9F80-C7BBAE22391F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2588B096-06BB-4C40-9FEB-9392D66EE3FA}
+	EndGlobalSection
+EndGlobal
