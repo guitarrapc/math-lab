@@ -15,7 +15,7 @@ namespace MathAlgorithm.Probability
             _dprobability = (_probability - 1) / _probability;
         }
 
-        public IEnumerable<double> CalcAtLeast1(int loop)
+        public IEnumerable<double> AtLeast1(int loop)
         {
             for (var i = 0; i < loop; i++)
             {
@@ -24,7 +24,7 @@ namespace MathAlgorithm.Probability
         }
         double CalcAtLeast1Func(int i) => Math.Pow(_dprobability, i + 1);
 
-        public IEnumerable<double> CalcContinue1(int loop)
+        public IEnumerable<double> Continue1(int loop)
         {
             for (var i = 0; i < loop; i++)
             {

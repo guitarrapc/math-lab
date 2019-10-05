@@ -63,11 +63,11 @@ namespace MathRunner
         private static void RunProbabilityMethod()
         {
             // Percentage of 1/50 will selected at least once with 50 iteration.
-            var source = new Probability(50).CalcAtLeast1(50).Select(x => x.ToPercentage(9));
+            var source = new Probability(50).AtLeast1(50).Select(x => x.ToPercentage(9));
             Console.WriteLine($"At least onetime for 1/50 in 50 itration: {source.Last()}");
 
             // Percentage of 1/6 will continuously selected for 7 iteration.
-            var source2 = new Probability(6).CalcContinue1(7).Select(x => x.ToPercentage(8));
+            var source2 = new Probability(6).Continue1(7).Select(x => x.ToPercentage(8));
             Console.WriteLine($"Continuously get 1/6 in 7 itration: {source2.Last()}");
 
             // LinqPad Utility to show Chart
