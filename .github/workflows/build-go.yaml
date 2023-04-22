@@ -1,0 +1,27 @@
+name: Build Go
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 0 0 * * 0 # At 00:00 on Sunday.
+  push:
+    branches:
+      - "main"
+  pull_request:
+    branches:
+      - "main"
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-go@v4
+        with:
+          go-version: 'stable'
+      - name: Build
+        run: go build -v ./src/Go/NewtonRaphthonMethod
