@@ -1,9 +1,8 @@
-﻿using MathAlgorithm.Fibonacci;
+﻿using MathAlgorithm.Felmer;
+using MathAlgorithm.Fibonacci;
 using MathAlgorithm.NewtonRaphsonMethod;
 using MathAlgorithm.Probability;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace MathRunner
@@ -40,6 +39,12 @@ namespace MathRunner
             // Probability
             Console.WriteLine("## Probability");
             RunProbabilityMethod();
+
+            Console.WriteLine("-----------------------");
+
+            // Felmer
+            Console.WriteLine("## Felmer");
+            RunFelmerNumber();
         }
 
         private static void RunFibonacci(IFibonacci[] fibs, int item)
@@ -73,6 +78,23 @@ namespace MathRunner
             // LinqPad Utility to show Chart
             //var i = 1;
             //Util.Chart(source, x => $"try:{i++}", x => x).Dump();
+        }
+
+        private static void RunFelmerNumber()
+        {
+            for (var i = 0; i < 12; i++)
+            {
+                if (i <= 5)
+                {
+                    var felmer = FelmerNumber.CalcSmall(i);
+                    Console.WriteLine($"{felmer} (n = {i})");
+                }
+                else
+                {
+                    var felmer = FelmerNumber.CalcBigInteger(i);
+                    Console.WriteLine($"{felmer} (n = {i})");
+                }
+            }
         }
     }
 }
