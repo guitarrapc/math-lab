@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Numerics;
 
 namespace MathAlgorithm.Fibonacci;
@@ -6,7 +6,7 @@ namespace MathAlgorithm.Fibonacci;
 public class FibonacciRunSquare : IFibonacci
 {
     /// <summary>
-    /// O(logn) : TL;DR; Matrix with repeated square calculation.
+    /// O(log n) : TL;DR; Matrix with repeated square calculation.
     /// </summary>
     /// <param name="n"></param>
     /// <returns></returns>
