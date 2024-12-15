@@ -30,6 +30,6 @@ jobs:
             6.0.x
             7.0.x
       - name: dotnet build
-        run: dotnet build ./src/CSharp/MathAlgorithm.sln -c ${{ env.BUILD_CONFIG }}
+        run: dotnet build MathAlgorithm.sln -c ${{ env.BUILD_CONFIG }}
       - name: dotnet run
         run: dotnet run --project ./src/CSharp/MathRunner/MathRunner.csproj -c ${{ env.BUILD_CONFIG }}
