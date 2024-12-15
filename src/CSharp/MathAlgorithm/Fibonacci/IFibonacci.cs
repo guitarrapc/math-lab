@@ -1,9 +1,8 @@
 ﻿using System.Numerics;
 
-namespace MathAlgorithm.Fibonacci
+namespace MathAlgorithm.Fibonacci;
+
+public interface IFibonacci
 {
-    public interface IFibonacci
-    {
-        BigInteger Caltulate(int n);
-    }
+    BigInteger Caltulate(int n);
 }

@@ -1,7 +1,6 @@
-﻿namespace MathAlgorithm.NewtonRaphsonMethod
+﻿namespace MathAlgorithm.NewtonRaphsonMethod;
+
+public interface INewtonRaphson
 {
-    public interface INewtonRaphson
-    {
-        double Sqrt(double x);
-    }
+    double Sqrt(double x);
 }
