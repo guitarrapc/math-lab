@@ -1,9 +1,10 @@
 name: Build Go
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: null
   schedule:
     - cron: 0 0 * * 0 # At 00:00 on Sunday.
+
   push:
     branches:
       - "main"
@@ -16,11 +17,15 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
+    permissions:
+      contents: read
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
         with:
           go-version: 'stable'
       - name: Build
