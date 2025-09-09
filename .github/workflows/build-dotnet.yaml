@@ -29,8 +29,6 @@ jobs:
         with:
           persist-credentials: false
       - uses: guitarrapc/actions/.github/actions/setup-dotnet@main
-        with:
-          restore-wasm-workload: true
       - name: dotnet build
         run: dotnet build MathAlgorithm.sln -c ${{ env.BUILD_CONFIG }}
       - name: dotnet run
