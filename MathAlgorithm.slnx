@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/props/">
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Project Path="src/CSharp/MathAlgorithm/MathAlgorithm.csproj" />
+  <Project Path="src/CSharp/MathRunner/MathRunner.csproj" />
+</Solution>

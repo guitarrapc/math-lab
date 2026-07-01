@@ -1,22 +1,21 @@
 name: Build Go
 
 on:
-  workflow_dispatch: null
-  schedule:
-    - cron: 0 0 * * 0 # At 00:00 on Sunday.
-
   push:
     branches:
       - "main"
   pull_request:
     branches:
       - "main"
+  schedule:
+    - cron: 0 0 * * 0 # At 00:00 on Sunday.
+  workflow_dispatch:
 
 jobs:
   build:
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-24.04, windows-2025, macos-26]
     permissions:
       contents: read
     runs-on: ${{ matrix.os }}
@@ -27,6 +26,6 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
         with:
-          go-version: 'stable'
+          go-version: "stable"
       - name: Build
         run: go build -v ./src/Go/NewtonRaphthonMethod
