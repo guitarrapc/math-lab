@@ -1,4 +1,4 @@
-name: Build Dotnet
+name: Build
 
 on:
   push:
@@ -12,8 +12,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build-dotnet:
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-24.04, windows-2025, macos-26]
     permissions:
@@ -24,8 +25,35 @@ jobs:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           persist-credentials: false
-      - uses: guitarrapc/actions/.github/actions/setup-dotnet@main
+      - uses: guitarrapc/actions/.github/actions/setup-dotnet@9122a18b0dea07585a242b9eb6ed7886f8587c49 # v1.0.1
       - name: dotnet build
         run: dotnet build -c Release
       - name: dotnet run
         run: dotnet run --project ./src/CSharp/MathRunner/MathRunner.csproj -c Release
+
+  build-go:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-2025, macos-26]
+    permissions:
+      contents: read
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
+        with:
+          go-version: "stable"
+      - name: Build
+        run: go build -v ./src/Go/NewtonRaphthonMethod
+
+  build-complete:
+    needs: [build-dotnet, build-go]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - name: Build complete
+        run: echo "Build complete for all platforms."
