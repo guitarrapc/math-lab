@@ -53,6 +53,7 @@ jobs:
   build-complete:
     needs: [build-dotnet, build-go]
     runs-on: ubuntu-24.04
+    permissions: {}
     timeout-minutes: 3
     steps:
       - name: Build complete
